@@ -43,7 +43,7 @@ formSubmit(){
     },(error) => {
       console.log(error);
       this.snack.open('Ha osurrido algun error inesperado del sistema', 'Aceptar', {
-        duration: 3000
+        duration: 2000
       });
     }
   )
