@@ -1,3 +1,14 @@
-<div class="">
-
-</div>
+<mat-toolbar color="primary" class="container">
+    <a [routerLink]="'/'"
+    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu_books</mat-icon>
+    </a>
+    <span>PORTAL DE EXAMENES</span>
+    <span class="example-spacer"></span>
+    <a [routerLink]="'/login'" mat-icon-button class="example-icon" aria-label="Example icon-button with heart">
+       Login
+    </a>
+    <a [routerLink]="'/singup'" mat-icon-button class="example-icon mr40 ml40" aria-label="Example icon-button with heart">
+      Singup
+    </a>
+  </mat-toolbar>

@@ -11,8 +11,12 @@
       "prefix": "app",
       "architect": {
         "build": {
+
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash"
+           ],
             "outputPath": "dist/sistema-examenes-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
