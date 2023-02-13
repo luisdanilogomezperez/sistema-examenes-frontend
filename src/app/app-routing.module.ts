@@ -1,3 +1,5 @@
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
@@ -18,6 +20,16 @@ const routes: Routes = [
   {
     path : 'login',
     component : LoginComponent,
+    pathMatch : 'full'
+  },
+  {
+    path : 'admin',
+    component : DashboardComponent,
+    pathMatch : 'full'
+  },
+  {
+    path : 'user-dashboard',
+    component : UserDashboardComponent,
     pathMatch : 'full'
   }
 ];
