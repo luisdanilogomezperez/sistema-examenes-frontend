@@ -5,10 +5,25 @@
     </a>
     <span>PORTAL DE EXAMENES</span>
     <span class="example-spacer"></span>
-    <a [routerLink]="'/login'" mat-icon-button class="example-icon" aria-label="Example icon-button with heart">
-       Login
+    <a
+      *ngIf = "!isLoggedIn"
+      [routerLink] = "'/login'" mat-button class="example-icon" aria-label="Example icon-button with heart">
+      Login
+   </a>
+    <a
+      *ngIf = "!isLoggedIn"
+      [routerLink] = "'/signup'" mat-button class="example-icon mr40 ml40" aria-label="Example icon-button with heart">
+      Signup
     </a>
-    <a [routerLink]="'/singup'" mat-icon-button class="example-icon mr40 ml40" aria-label="Example icon-button with heart">
-      Singup
+    <a
+      *ngIf = "isLoggedIn"
+      (click) = "logout()"  mat-button class="example-icon mr40" aria-label="Example icon-button with heart">
+      Logout
     </a>
+    <button
+      *ngIf = "isLoggedIn  && user"
+      mat-button
+      class = "example-icon mr10" aria-label="Example icon-button with heart">
+      {{ login.getUser().username }}
+    </button>
   </mat-toolbar>

@@ -2,7 +2,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
-import { window } from 'rxjs';
 
 
 @Component({
@@ -20,8 +19,7 @@ export class LoginComponent implements OnInit{
 
   constructor(private snack:MatSnackBar, private loginService:LoginService, private router:Router){ }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   formSubmit(){
     if(this.loginData.username.trim() == '' || this.loginData.password.trim() == ''){
@@ -32,24 +30,25 @@ export class LoginComponent implements OnInit{
     }
 
     this.loginService.generateToken(this.loginData).subscribe(
-      (data:any)=>{
+      (data:any) => {
         console.log(data);
 
         this.loginService.loginUser(data.token);
-        this.loginService.getCurrentUser().subscribe((user:any)=>{
+        this.loginService.getCurrentUser().subscribe((user:any) => {
           this.loginService.setUser(user);
           console.log(user);
 
-          if(this.loginService.getUserRole() == "ADMIN"){
+          if(this.loginService.getUserRole() == 'ADMIN'){
             //DASHBOARD ADMIN
-            //window.location.href = '/admin';
+            //window.location.href='/admin';
             this.router.navigate(['admin']);
-
+            this.loginService.loginStatusSubject.next(true);
           }
-          else if(this.loginService.getUserRole() == "NORMAL"){
-            //DASHBOARD ADMIN
-            //window.location.href = '/user-dashboard';
+          else if(this.loginService.getUserRole() == 'NORMAL'){
+            //DASHBOARD Normal
+            //window.location.href='/user-dashboard';
             this.router.navigate(['user-dashboard']);
+            this.loginService.loginStatusSubject.next(true);
           }
           else{
             this.loginService.logout();
