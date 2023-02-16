@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -26,6 +27,9 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 
 
 @NgModule({
@@ -36,7 +40,10 @@ import { NormalGuard } from './services/normal.guard';
     LoginComponent,
     HomeComponent,
     DashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +59,7 @@ import { NormalGuard } from './services/normal.guard';
     MatCardModule,
     RouterModule,
     MatToolbarModule,
+    MatListModule,
     MatIconModule,
     RouterTestingModule,
     RouterModule.forRoot([
@@ -74,7 +82,17 @@ import { NormalGuard } from './services/normal.guard';
         path : 'admin',
         component:DashboardComponent,
         pathMatch:'full',
-        canActivate:[AdminGuard]
+        canActivate:[AdminGuard],
+        children:[
+          {
+            path : 'profile',
+            component: ProfileComponent
+          },
+          {
+            path : '',
+            component: WelcomeComponent
+          }
+        ]
       },
       {
         path : 'user-dashboard',

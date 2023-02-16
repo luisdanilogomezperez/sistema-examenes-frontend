@@ -1,0 +1,58 @@
+<mat-card  style="margin-left: 10px;">
+    <div class="text-center mt20">
+      <h1>Detalles del perfil</h1>
+    </div>
+    <mat-card-content>
+      <div class="bootstrap-wrapper">
+        <div class="container">
+          <div class="text-center">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+            alt="" class="profile-image">
+
+            <h1 class="mt20">{{ login.getUser().username }}</h1>
+          </div>
+
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <table class="table text-center">
+                <th>Información del perfil</th>
+                <tr>
+                  <td>Nombre de usuario</td>
+                  <td>{{ user.nombre }} {{ user.apellido }}</td>
+                </tr>
+                <tr>
+                  <td>Telefono</td>
+                  <td>{{ user.telefono }}</td>
+                </tr>
+                <tr>
+                  <td>E-mail</td>
+                  <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                  <td>Rol</td>
+                  <td>{{ login.getUserRole() }}</td>
+                </tr>
+                <tr>
+                  <td>Estado</td>
+                  <td>
+                    {{ user.enabled ? "Activo" : "Inactivo"}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Acciones</td>
+                  <td class="text-center">
+                    <mat-card-actions>
+                    <button mat-raised-button class="ml50" color = "primary">Actualizar</button>
+                    <button mat-raised-button class="ml10" color = "accent">Compartir</button>
+                  </mat-card-actions>
+                </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </mat-card-content>
+</mat-card>
+
