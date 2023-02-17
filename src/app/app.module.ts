@@ -10,6 +10,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -30,6 +31,18 @@ import { NormalGuard } from './services/normal.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
+import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
+import { AddExamenComponent } from './pages/add-examen/add-examen.component';
+import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
+import { ActualizarPreguntaComponent } from './pages/admin/actualizar-pregunta/actualizar-pregunta.component';
+import { AddPreguntaComponent } from './pages/admin/add-pregunta/add-pregunta.component';
+import { ViewExamenPreguntasComponent } from './pages/admin/view-examen-preguntas/view-examen-preguntas.component';
+import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones.component';
+import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
+import { StartComponent } from './pages/user/start/start.component';
 
 
 @NgModule({
@@ -43,7 +56,18 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
     UserDashboardComponent,
     ProfileComponent,
     SidebarComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ViewCategoriasComponent,
+    AddCategoriaComponent,
+    ViewExamenesComponent,
+    AddExamenComponent,
+    ActualizarExamenComponent,
+    ActualizarPreguntaComponent,
+    AddPreguntaComponent,
+    ViewExamenPreguntasComponent,
+    InstruccionesComponent,
+    LoadExamenComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +78,7 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
     MatInputModule,
     FormsModule,
     HttpClientModule,
+    MatGridListModule,
     MatSnackBarModule,
     CommonModule,
     MatCardModule,
@@ -61,6 +86,7 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
     MatToolbarModule,
     MatListModule,
     MatIconModule,
+    MatDividerModule,
     RouterTestingModule,
     RouterModule.forRoot([
       {
@@ -91,6 +117,18 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
           {
             path : '',
             component: WelcomeComponent
+          },
+          {
+            path : 'categorias',
+            component:ViewCategoriasComponent
+          },
+          {
+            path : 'add-categorias',
+            component:AddCategoriaComponent
+          },
+          {
+            path : 'examenes',
+            component:ViewExamenesComponent
           }
         ]
       },

@@ -9,6 +9,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
+import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria.component';
+import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
 
 const routes: Routes = [
   {
@@ -38,6 +41,18 @@ const routes: Routes = [
       {
         path : '',
         component: WelcomeComponent
+      },
+      {
+        path : 'categorias',
+        component:ViewCategoriasComponent
+      },
+      {
+        path : 'add-categorias',
+        component:AddCategoriaComponent
+      },
+      {
+        path : 'examenes',
+        component:ViewExamenesComponent
       }
     ]
   },

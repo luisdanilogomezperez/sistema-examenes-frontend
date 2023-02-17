@@ -15,8 +15,7 @@
   border: 0.5px solid gainsboro;
 }
 
-.acciones{
-  display: flexbox;
+.text-center2{
   align-items: center;
   justify-content: center;
   text-align: center;

@@ -2,9 +2,9 @@
 
 html, body { height: 100%; }
 body {
-   margin: 0;
-   font-family: Roboto, "Helvetica Neue", sans-serif;
-   background: f5f5f5;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #f5f5f5;
 }
 
 .imagen{
@@ -12,8 +12,6 @@ body {
 }
 
 .text-center{
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
