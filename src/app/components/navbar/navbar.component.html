@@ -15,17 +15,20 @@
       [routerLink] = "'/signup'" mat-button class="example-icon favorite-icon mr40 ml40" aria-label="Example icon-button with heart">
       Signup
     </a>
+
     <a
       *ngIf = "isLoggedIn"
       (click) = "logout()"  mat-button class="example-icon favorite-icon mr40" aria-label="Example icon-button with heart">
-      Logout
+      <mat-icon mat-list-icon>logout</mat-icon>Logout
     </a>
+
     <button
       *ngIf = "isLoggedIn  && user"
       mat-button
       class = "example-icon favorite-icon mr10"
       routerLink="/admin/profile"
       aria-label="Example icon-button with heart">
+      <mat-icon mat-list-icon>account_circle</mat-icon>
       {{ login.getUser().username }}
     </button>
   </mat-toolbar>

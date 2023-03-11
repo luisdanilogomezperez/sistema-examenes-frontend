@@ -40,7 +40,8 @@ import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria
 import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
 import { AddExamenComponent } from './pages/admin/add-examen/add-examen.component';
 import { AddPreguntaComponent } from './pages/admin/add-pregunta/add-pregunta.component';
-
+import { SidebarComponent as UserSidebar} from './pages/user/sidebar/sidebar.component';
+import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,9 @@ import { AddPreguntaComponent } from './pages/admin/add-pregunta/add-pregunta.co
     ActualizarExamenComponent,
     ActualizarPreguntaComponent,
     ViewExamenPreguntasComponent,
-    AddPreguntaComponent
+    AddPreguntaComponent,
+    UserSidebar,
+    LoadExamenComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,20 @@
-<h1 class="mt20">Preguntas de {{titulo}} </h1>
-<div class="bootstrap-wrapper">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="container text-center">
-        <button mat-raised-button
+<div class="bootstrap-wrapper mt20 text-center">
+<mat-card>
+    <mat-card-content>
+      <h1 >Preguntas de {{titulo}} </h1>
+      <button mat-raised-button
         color="primary"
         [routerLink]="'/admin/add-pregunta/examen/'+examenId+'/'+titulo">
         Agregar pregunta
       </button>
-      </div>
+    </mat-card-content>
+
+</mat-card>
+</div>
+
+<div class="bootstrap-wrapper">
+  <div class="row">
+    <div class="col-md-12">
       <mat-card *ngFor="let p of preguntas; let i = index" class="mt20">
         <mat-card-content >
             <p>

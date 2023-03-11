@@ -17,6 +17,8 @@ import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-cate
 import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria.component';
 import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
 import { AddExamenComponent } from './pages/admin/add-examen/add-examen.component';
+import { StartComponent } from './pages/user/start/start.component';
+import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
 
 const routes: Routes = [
   {
@@ -86,7 +88,17 @@ const routes: Routes = [
   {
     path : 'user-dashboard',
     component:UserDashboardComponent,
-    canActivate:[NormalGuard]
+    canActivate:[NormalGuard],
+    children:[
+      {
+        path : ':catId',
+        component: LoadExamenComponent
+      },
+      {
+        path : 'profile',
+        component: ProfileComponent
+      }
+    ]
   }
 ];
 
