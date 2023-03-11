@@ -9,11 +9,7 @@ import { Observable } from 'rxjs';
 export class AdminGuard implements CanActivate {
 
   constructor(private loginService:LoginService, private router:Router){
-
   }
-
-
-
 
   canActivate(
     route: ActivatedRouteSnapshot,
