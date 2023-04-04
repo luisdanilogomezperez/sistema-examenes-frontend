@@ -10,12 +10,10 @@ export class SidebarComponent implements OnInit{
 
   constructor(public login:LoginService){}
 
+  ngOnInit(): void {
+  }
   public logout(){
     this.login.logout();
     window.location.reload();
   }
-
-  ngOnInit(): void {
-  }
-
 }

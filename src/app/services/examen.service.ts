@@ -28,4 +28,18 @@ export class ExamenService {
   public obtenerExamen(examenId:any){
     return this.http.get(`${baseRUrl}/examen/${examenId}`);
   }
+
+  public listarExamenDeUnaCategoria(categoriaId:any){
+    return this.http.get(`${baseRUrl}/examen/categoria/${categoriaId}`);
+  }
+
+  public obtenerExamenesActivos(){
+    return this.http.get(`${baseRUrl}/examen/activo`);
+  }
+
+  public obtenerExamenesActivosDeUnaCategoria(categoriaId:any){
+    return this.http.get(`${baseRUrl}/examen/categoria/activo/${categoriaId}`);
+  }
 }
+
+

@@ -19,6 +19,7 @@ import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes
 import { AddExamenComponent } from './pages/admin/add-examen/add-examen.component';
 import { StartComponent } from './pages/user/start/start.component';
 import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
+import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones.component';
 
 const routes: Routes = [
   {
@@ -95,10 +96,15 @@ const routes: Routes = [
         component: LoadExamenComponent
       },
       {
-        path : 'profile',
-        component: ProfileComponent
+        path : 'instrucciones/:examenId',
+        component: InstruccionesComponent
       }
     ]
+  },
+  {
+    path : 'start/:examenId',
+    component: StartComponent,
+    canActivate:[NormalGuard]
   }
 ];
 

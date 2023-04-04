@@ -1,3 +1,4 @@
+import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones.component';
 import { ViewExamenPreguntasComponent } from './pages/admin/view-examen-preguntas/view-examen-preguntas.component';
 import { ActualizarPreguntaComponent } from './pages/admin/actualizar-pregunta/actualizar-pregunta.component';
 import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
@@ -24,6 +25,7 @@ import {MatListModule} from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -42,6 +44,9 @@ import { AddExamenComponent } from './pages/admin/add-examen/add-examen.componen
 import { AddPreguntaComponent } from './pages/admin/add-pregunta/add-pregunta.component';
 import { SidebarComponent as UserSidebar} from './pages/user/sidebar/sidebar.component';
 import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
+import { StartComponent } from './pages/user/start/start.component';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+
 
 @NgModule({
   declarations: [
@@ -64,7 +69,9 @@ import { LoadExamenComponent } from './pages/user/load-examen/load-examen.compon
     ViewExamenPreguntasComponent,
     AddPreguntaComponent,
     UserSidebar,
-    LoadExamenComponent
+    LoadExamenComponent,
+    InstruccionesComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +92,12 @@ import { LoadExamenComponent } from './pages/user/load-examen/load-examen.compon
     MatIconModule,
     MatDividerModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true
+    })
 
   ],
   providers: [authInterceptorProviders,
